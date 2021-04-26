@@ -1,0 +1,136 @@
+@import 'variables'
+@import 'null'
+
+@font-face
+  font-family: "Bebas"
+  src: url("../fonts/BebasNeue-Regular.ttf") format("truetype")
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+::-webkit-scrollbar-button
+  background-image: url('')
+  background-repeat: no-repeat
+  width: 5px
+  height: 0px
+
+::-webkit-scrollbar-track
+  background-color: transparent
+
+::-webkit-scrollbar-thumb
+  -webkit-border-radius: 0px
+  border-radius: 0px
+  background-color: $c-sec
+
+::-webkit-scrollbar-thumb:hover
+  background-color: $c-active
+
+::-webkit-resizer
+  background-image: url('')
+  background-repeat: no-repeat
+  width: 5px
+  height: 0px
+
+::-webkit-scrollbar
+  width: 5px
+
+%bottomLine
+  border-bottom: 1px solid #dddddd
+
+.licenses
+  border: 13px solid #ebebeb
+  background-color: #f8f8f8
+  padding: 21px 20px 18px
+  width: 590px
+  &-list
+    @extend %bottomLine
+    &__item
+      display: flex
+      align-items: center
+      padding: 35px 23px
+      height: 32px
+      border: 1px solid transparent
+      &:last-child
+        margin-bottom: 10px
+      &[checked]
+        background-color: #ebf4f7
+        border-color: #cbe1e9
+      .item
+        &__radio
+          margin-right: 25px
+          display: none
+          &:checked + .item__label::before
+            content: "\2022"
+            color: #0294bf
+            font-size: 48px
+            background-color: #dce8ef
+            border-color: #3a6991
+        &__label
+          cursor: pointer
+          position: relative
+          padding-left: 55px
+          width: 100%
+          color: #838383
+          display: flex
+          align-items: center
+          justify-content: space-between
+          &-title
+            font-family: 'Bebas', sans-serif
+            text-transform: uppercase
+            font-size: 25px
+          &-price
+            font-size: 16px
+          &::before
+            content: ""
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 32px
+            height: 32px
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            background-color: #fff
+            border: 5px solid #dadada
+            border-radius: 50%
+  &-counter
+    @extend %bottomLine
+    padding: 30px 0px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #656565
+    &__label
+      margin-right: 10px
+      font-size: 14px
+    &__select
+      width: 60px
+      height: 30px
+      border-radius: 2px
+      border: 2px solid transparent
+      &:focus
+        border-color: #c7d8f4
+  &-result
+    padding: 30px 0px
+    display: flex
+    flex-direction: column
+    align-items: center
+    &__title
+      margin-bottom: 13px
+      text-transform: uppercase
+      font-family: 'Bebas', sans-serif
+      color: #807e7b
+      font-size: 30px
+      span
+        color: #3d8eac
+    &__button
+      text-transform: uppercase
+      padding: 15px 60px
+      background-color: #33a845
+      color: #fff
+      border-radius: 50px
+      margin-bottom: 50px
+    &__plan
+      color: #3d8eac
+      font-size: 20px
